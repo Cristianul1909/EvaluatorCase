@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analiză Imagine AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Analiză Imagine cu AI</h1>
+        <p>Încarcă una sau mai multe imagini, setează locația și adaugă instrucțiuni pentru inteligența artificială.</p>
+
+        <!-- 1. Input-ul pentru imagini -->
+        <div class="upload-section">
+            <label for="image-upload" class="upload-label">
+                <span id="upload-text">📸 Apasă pentru a încărca imagini (PNG, JPG)</span>
+                <input type="file" id="image-upload" accept="image/png, image/jpeg, image/webp" multiple>
+            </label>
+            
+            <div id="image-preview-container" class="hidden">
+                <div id="preview-grid" class="preview-grid"></div>
+                <button id="remove-all-images">Șterge toate imaginile</button>
+            </div>
+        </div>
+
+        <!-- 2. Parametrii și prompt-ul -->
+        <div class="prompt-section">
+            <label>Detalii locație:</label>
+            <div class="input-group">
+                <input type="text" id="location-country" placeholder="Țara (ex: România)">
+                <input type="text" id="location-zone" placeholder="Zona / Cod poștal (ex: Dâmbovița, 130004)">
+            </div>
+            
+            <label for="ai-prompt" style="margin-top: 15px;">Instrucțiuni suplimentare:</label>
+            <textarea id="ai-prompt" placeholder="Ex: Descrie în detaliu ce se află în aceste imagini raportat la locația menționată..."></textarea>
+        </div>
+
+        <button id="submit-btn" disabled>Trimite către AI</button>
+
+        <!-- Zona unde se afișează răspunsul -->
+        <div id="result-section" class="hidden">
+            <h3>Rezultat:</h3>
+            <div id="ai-response"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
